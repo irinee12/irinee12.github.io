@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irine Saras Hapsari | UI/UX & Front-End</title>
+<meta name="description" content="Portofolio Irine Saras Hapsari, mahasiswa Teknik Informatika yang berfokus pada UI/UX Design dan Front-End Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..800,100;1,9..144,500..700,100&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx2" aria-hidden="true"></canvas><div class="cur" id="cur" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#home" class="logo" data-go="0">irine<span>♡</span></a>
+  <nav><a href="#about" data-go="1">Tentang</a><a href="#projects" data-go="2">Proyek</a><a href="#skills" data-go="3">Keahlian</a><a href="#strengths" data-go="4">Kekuatan</a><a href="#contact" data-go="5">Kontak</a></nav>
+</header>
+
+<main class="stage">
+<section class="slide hero" id="home">
+  <div class="heroin">
+    <p class="hello">Halo, aku <b>Irine</b> 🌷</p>
+    <h1 id="name" aria-label="Irine Saras Hapsari">Irine Saras Hapsari</h1>
+    <p class="role">Aku <span id="typed"></span><u class="caret"></u></p>
+    <div><a class="btn magnet" href="#projects" data-go="2">Lihat proyekku</a><a class="btn ghost magnet" href="#contact" data-go="5">Ajak kolaborasi</a></div>
+    <p class="hint">tekan aku, aku bisa diajak ngobrol ✨</p>
+  </div>
+</section>
+
+<section class="slide" id="about"><div class="wrap about">
+  <div class="avatar" id="avatar" role="img" aria-label="Foto Irine (ganti dengan fotomu)">IS</div>
+  <div>
+    <h2>Dari layar sampai alat, semuanya kurancang ramah</h2>
+    <p>Aku mahasiswa D4 Teknik Informatika di Politeknik Negeri Jember. Aku suka mengubah alur yang membingungkan jadi tampilan yang mudah dipakai, mulai dari riset kebutuhan pengguna, wireframe di Figma, sampai jadi aplikasi web, mobile, dan perangkat IoT.</p>
+    <p>Saat ini aku mencari magang di bidang UI/UX, Front-End, atau pengembangan sistem IoT. Aku cepat belajar, teliti, dan senang bekerja dalam tim.</p>
+  </div>
+</div></section>
+
+<section class="slide" id="projects"><div class="wrap">
+  <h2>Proyek yang pernah kukerjakan</h2>
+  <p class="sub">Tekan kartunya untuk melihat apa yang kukerjakan.</p>
+  <div class="cards">
+    <button class="card" style="--c:#FFD6E0" aria-pressed="false">
+      <span class="face front"><em>Feb – Mei 2025</em><strong>Sistem Parkir Desktop</strong><small>Bicopis, Surabaya</small><i class="ico">🚗</i></span>
+      <span class="face back"><ul><li>Menganalisis alur parkir dan fitur utama</li><li>Merancang antarmuka desktop yang jelas</li><li>Menguji bersama pengguna lalu memperbaikinya</li></ul></span>
+    </button>
+    <button class="card" style="--c:#E4D5FB" aria-pressed="false">
+      <span class="face front"><em>Sep – Des 2025</em><strong>Aplikasi Kasir</strong><small>Cafe Kedai Temeji, Sidoarjo</small><i class="ico">☕</i></span>
+      <span class="face back"><ul><li>Mengidentifikasi alur transaksi kasir</li><li>Merancang antarmuka yang cepat dan sederhana</li><li>Menyempurnakan desain agar transaksi efisien</li></ul></span>
+    </button>
+    <button class="card" style="--c:#CDEFE0" aria-pressed="false">
+      <span class="face front"><em>Feb – Mei 2026</em><strong>Tracer Alumni</strong><small>Website & aplikasi mobile, Polije</small><i class="ico">🎓</i></span>
+      <span class="face back"><ul><li>Menganalisis alur informasi pendataan alumni</li><li>Merancang antarmuka web dan mobile</li><li>Menyusun alur sistem yang lebih terstruktur</li></ul></span>
+    </button>
+    <button class="card" style="--c:#FFF1B8" aria-pressed="false">
+      <span class="face front"><em>Sep – Des 2026</em><strong>Pakan Ikan Otomatis</strong><small>IoT berbasis web, Tambak Kec. Jabon, Sidoarjo</small><i class="ico">🐟</i></span>
+      <span class="face back"><ul><li>Merancang alat pemberi pakan ikan otomatis untuk tambak</li><li>Membangun web untuk memantau dan mengatur pakan</li><li>Menghubungkan perangkat keras dengan perangkat lunak</li></ul></span>
+    </button>
+  </div>
+</div></section>
+
+<section class="slide" id="skills"><div class="wrap">
+  <h2>Skills & Competencies</h2>
+  <p class="sub">Tekan chip-nya, lihat apa yang terjadi 🫧</p>
+  <div class="grp"><h3>Productivity & Office Tools</h3><div class="chips"><button>Microsoft Word</button><button>Microsoft Excel</button><button>Microsoft PowerPoint</button></div></div>
+  <div class="grp"><h3>UI/UX & Design</h3><div class="chips"><button>Figma</button><button>Wireframing</button><button>UI Design</button></div></div>
+  <div class="grp"><h3>Web & Mobile Basics</h3><div class="chips"><button>HTML5</button><button>CSS3</button><button>JavaScript</button><button>PHP</button><button>Laravel</button><button>Flutter</button><button>MySQL</button></div></div>
+  <div class="grp"><h3>Development & Support Tools</h3><div class="chips"><button>VS Code</button><button>Laragon</button><button>Git & GitHub</button></div></div>
+  <div class="grp"><h3>Hardware & IoT</h3><div class="chips"><button>ESP32</button><button>Arduino</button><button>Proteus Simulation</button></div></div>
+</div></section>
+
+<section class="slide" id="strengths"><div class="wrap">
+  <h2>Soft Skills & Project Experience</h2>
+  <p class="sub">Cara kerja yang kubawa ke setiap proyek.</p>
+  <div class="cards three">
+    <div class="soft" style="--c:#FFD6E0"><i>🤝</i><h3>Project Management & Collaboration</h3><p>Berpengalaman merancang dan mengembangkan sistem end-to-end (Web, Mobile, & IoT) secara kolaboratif dalam tim lintas fungsi, dari tahap analisis hingga deployment.</p></div>
+    <div class="soft" style="--c:#E4D5FB"><i>🧩</i><h3>Problem Solving & Analytical Thinking</h3><p>Terbiasa memecahkan masalah integrasi perangkat lunak dan perangkat keras secara terstruktur, teliti, serta berorientasi pada kebutuhan pengguna (user-centric).</p></div>
+    <div class="soft" style="--c:#CDEFE0"><i>🎨</i><h3>UI/UX Design & System Analysis</h3><p>Mampu menerjemahkan kebutuhan fungsional sistem ke dalam alur kerja yang jelas serta antarmuka yang intuitif.</p></div>
+  </div>
+  <div class="note"><p><b>🏆 Juara 3</b>, Accounting Fest, Universitas Nusantara PGRI Kediri</p><p><b>📘 TOEFL Preparation</b>, Brilliant International Education, Pare (2025)</p></div>
+</div></section>
+
+<section class="slide contact" id="contact"><div class="wrap">
+  <h2>Yuk, ngobrol</h2>
+  <p class="sub">Terbuka untuk magang UI/UX, Front-End, dan IoT.</p>
+  <button class="big magnet" id="copy">Salin email: Irinee120906@gmail.com</button>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/irine-saras-hapsari" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://wa.me/6281299747524" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="#">Portofolio Figma</a>
+  </div>
+  <p class="foot">Dibuat dengan 💗 oleh Irine Saras Hapsari, Nganjuk, Jawa Timur</p>
+</div></section>
+</main>
+
+<div class="pet" id="pet" role="button" tabindex="0" aria-label="Maskot Irine, tekan untuk menyapa">
+  <div class="say" id="say"></div>
+  <div class="orbit" aria-hidden="true"><b style="--a:0deg"><span>Figma</span></b><b style="--a:90deg"><span>ESP32</span></b><b style="--a:180deg"><span>Laravel</span></b><b style="--a:270deg"><span>Flutter</span></b></div>
+  <div class="body"><i class="bow">🎀</i><div class="eyes"><div class="eye"><div class="pu"></div></div><div class="eye"><div class="pu"></div></div></div><i class="mouth"></i><i class="cheek l"></i><i class="cheek r"></i></div>
+</div>
+<div class="pager"><button id="prev" aria-label="Slide sebelumnya">‹</button><div class="dots" id="dots"></div><button id="next" aria-label="Slide berikutnya">›</button></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
