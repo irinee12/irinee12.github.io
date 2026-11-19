@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irine Saras Hapsari | Front-End Development &amp; UI/UX</title>
+<meta name="description" content="Portofolio Irine Saras Hapsari, mahasiswa D4 Teknik Informatika Politeknik Negeri Jember dengan fokus UI/UX Design, pengembangan web, dan IoT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f1b33; --navy2:#1a2b4d; --blue:#2f64d6; --blue-d:#2453b5; --sky:#9db9f5;
+  --ink:#172033; --muted:#5a6476; --line:#e2e7f0; --bg:#f5f7fb; --paper:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+
+/* Navigasi */
+.nav{position:sticky;top:0;z-index:20;background:rgba(15,27,51,.96);backdrop-filter:blur(8px);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;text-decoration:none}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{font-size:14px;font-weight:600;color:#c6d3ee;text-decoration:none}
+.nav ul a:hover{color:#fff}
+.btn{display:inline-block;padding:11px 22px;font:700 15px/1 'Manrope',sans-serif;border-radius:5px;text-decoration:none;border:2px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer}
+.btn:hover{background:var(--blue-d);border-color:var(--blue-d)}
+.btn.ghost{background:transparent;border-color:#4a5d86;color:#fff}
+.btn.ghost:hover{border-color:#fff;background:transparent}
+.nav .btn{padding:9px 16px;font-size:14px}
+
+/* Hero */
+.hero{background:var(--navy);color:#fff}
+.hero-main{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center;padding:72px 0 56px}
+.hero h1{margin:0;font-size:clamp(36px,5.2vw,58px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.hero .role{margin:12px 0 22px;font-size:20px;font-weight:600;color:var(--sky)}
+.hero .lead{margin:0 0 30px;max-width:56ch;color:#cfd9ee;font-size:17px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.photo{justify-self:end;width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:8px;border:1px solid #33466f;box-shadow:16px 16px 0 var(--navy2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #2b3e66}
+.stats div{padding:22px 0 26px}
+.stats div+div{padding-left:24px;border-left:1px solid #2b3e66}
+.stats b{display:block;font-size:26px;line-height:1.2;font-weight:800}
+.stats span{font-size:14px;color:#a9b9d9}
+
+/* Seksi */
+section{padding:72px 0}
+section.alt{background:var(--paper)}
+.sec-head{margin-bottom:32px}
+.sec-head h2{margin:0 0 6px;font-size:30px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+.sec-head p{margin:0;color:var(--muted);max-width:60ch}
+
+/* Keahlian */
+.skills{border-top:2px solid var(--navy)}
+.skill-row{display:grid;grid-template-columns:230px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.skill-row h3{margin:0;font-size:16px;font-weight:700;color:var(--navy)}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:4px 12px;font-size:14px;font-weight:600;color:var(--navy2);background:#e9effb;border-radius:4px}
+
+/* Proyek */
+.filters{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.filters button{padding:8px 18px;font:600 14px 'Manrope',sans-serif;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;cursor:pointer}
+.filters button[aria-pressed=true]{color:#fff;background:var(--navy);border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:20px}
+.project{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.project[hidden]{display:none}
+.project:hover{border-color:#b6c4e2;box-shadow:0 8px 22px rgba(15,27,51,.09)}
+.p-head{display:block;width:100%;padding:0;text-align:left;font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.thumb{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;background:linear-gradient(135deg,var(--navy),#27427a);color:#8aa4d8;font-weight:800;font-size:20px;overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p-info{display:block;padding:18px 20px 20px}
+.p-kind{display:block;font-size:13px;font-weight:700;color:var(--blue)}
+.p-title{display:block;margin:2px 0 6px;font-size:17px;font-weight:700;line-height:1.35;color:var(--navy)}
+.p-meta{display:block;font-size:14px;color:var(--muted)}
+.p-hint{display:block;margin-top:14px;font-size:13px;font-weight:700;color:var(--blue)}
+.p-info .chips{margin-top:12px}
+.p-more{display:none;padding:22px 24px}
+.p-more h4{margin:0 0 10px;font-size:15px;font-weight:700;color:var(--navy)}
+.p-more ul{margin:0;padding-left:20px}
+.p-more li{margin-bottom:8px}
+.project.open{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border-color:var(--blue);box-shadow:0 10px 28px rgba(47,100,214,.14)}
+.project.open .thumb{aspect-ratio:16/9}
+.project.open .p-more{display:block;animation:in .35s ease .1s both;align-self:center}
+.project.open .p-hint span{display:none}
+.project.open .p-hint::before{content:"Tutup detail"}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+::view-transition-group(*){animation-duration:.4s;animation-timing-function:cubic-bezier(.4,0,.2,1)}
+
+/* Info bawah */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.cols h3{margin:0 0 14px;padding-bottom:10px;font-size:18px;font-weight:800;color:var(--navy);border-bottom:2px solid var(--navy)}
+.item{margin-bottom:16px}
+.item b{display:block;font-weight:700}
+.item span{font-size:14px;color:var(--muted)}
+
+/* Kontak */
+.contact{background:var(--navy);color:#fff;padding:64px 0 40px}
+.contact h2{margin:0 0 8px;font-size:30px;font-weight:800}
+.contact p{margin:0 0 28px;color:#b9c7e6}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;border-top:1px solid #2b3e66}
+.links a{display:block;padding:18px 0;text-decoration:none;border-bottom:1px solid #2b3e66}
+.links small{display:block;font-size:13px;color:#8fa3cc}
+.links b{font-weight:600;word-break:break-all}
+.links a:hover b{color:var(--sky)}
+.contact .foot{margin:32px 0 0;font-size:13px;color:#7f92ba}
+
+@media (max-width:860px){
+  .hero-main{grid-template-columns:1fr;gap:36px;padding:48px 0 40px}
+  .photo{justify-self:start;max-width:220px;box-shadow:10px 10px 0 var(--navy2)}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(3){padding-left:0;border-left:0}
+  .grid{grid-template-columns:1fr 1fr}
+  .cols{grid-template-columns:1fr;gap:32px}
+  .links{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .nav ul{display:none}
+  section{padding:52px 0}
+  .skill-row{grid-template-columns:1fr;gap:10px}
+  .grid{grid-template-columns:1fr}
+  .project.open{grid-template-columns:1fr}
+}
+@media print{.nav,.filters{display:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Irine Saras Hapsari</a>
+    <ul>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#prestasi">Pendidikan</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <a class="btn" href="CV_Irine_Saras_Hapsari.pdf" download>Unduh CV</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-main">
+        <div>
+          <h1>Irine Saras Hapsari</h1>
+          <p class="role">Front-End Development &amp; UI/UX Design</p>
+          <p class="lead">Mahasiswa D4 Teknik Informatika yang merancang dan mengembangkan sistem end-to-end (web, mobile, dan IoT) secara kolaboratif, dari analisis kebutuhan dan perancangan antarmuka di Figma hingga implementasi.</p>
+          <div class="actions">
+            <a class="btn" href="#proyek">Lihat proyek</a>
+            <a class="btn ghost" href="mailto:irinee120906@gmail.com">Hubungi saya</a>
+          </div>
+        </div>
+        <img class="photo" src="potirinee.jpg" alt="Foto Irine Saras Hapsari">
+      </div>
+      <div class="stats">
+        <div><b>3,87</b><span>IPK, D4 Teknik Informatika</span></div>
+        <div><b>7</b><span>Proyek web, mobile, desktop, dan IoT</span></div>
+        <div><b>4</b><span>Pengalaman proyek di luar kelas</span></div>
+        <div><b>Juara 3</b><span>Accounting Fest, Business Model Canvas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="keahlian">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Keahlian</h2>
+        <p>Dari analisis kebutuhan pengguna sampai implementasi di web, mobile, dan perangkat IoT.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-row"><h3>UI/UX Design</h3><ul class="chips"><li>Perancangan UI/UX</li><li>Wireframing</li><li>User Flow</li><li>Figma (web, mobile, desktop)</li></ul></div>
+        <div class="skill-row"><h3>Frontend Web &amp; Mobile</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>Laravel</li><li>Flutter</li></ul></div>
+        <div class="skill-row"><h3>System Analysis</h3><ul class="chips"><li>Analisis kebutuhan sistem</li><li>Pemetaan alur informasi</li><li>Perancangan basis data</li></ul></div>
+        <div class="skill-row"><h3>Database</h3><ul class="chips"><li>MySQL</li></ul></div>
+        <div class="skill-row"><h3>IoT Hardware &amp; Simulation</h3><ul class="chips"><li>ESP32 (dasar)</li><li>Arduino (dasar)</li><li>Proteus</li><li>Integrasi hardware dan software</li></ul></div>
+        <div class="skill-row"><h3>Tools &amp; Office</h3><ul class="chips"><li>VS Code</li><li>Laragon</li><li>Git &amp; GitHub</li><li>Word</li><li>Excel</li><li>PowerPoint</li></ul></div>
+        <div class="skill-row"><h3>Soft Skills</h3><ul class="chips"><li>Kolaborasi tim lintas fungsi</li><li>Pemecahan masalah</li><li>Berpikir analitis</li><li>Berorientasi pada pengguna</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Pengalaman &amp; Proyek</h2>
+        <p>Klik salah satu kartu untuk melihat detail pekerjaan saya.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter proyek">
+        <button type="button" data-f="all" aria-pressed="true">Semua</button>
+        <button type="button" data-f="Pengalaman" aria-pressed="false">Pengalaman</button>
+        <button type="button" data-f="Proyek" aria-pressed="false">Proyek</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="prestasi">
+    <div class="wrap cols">
+      <div>
+        <h3>Pendidikan</h3>
+        <div class="item"><b>Politeknik Negeri Jember</b><span>D4 Teknik Informatika PSDKU Sidoarjo<br>2024 – Sekarang, IPK 3,87</span></div>
+      </div>
+      <div>
+        <h3>Prestasi</h3>
+        <div class="item"><b>Juara 3, Accounting Fest</b><span>Kategori Business Model Canvas<br>Himpunan Akuntansi, FEB Universitas Nusantara PGRI Kediri</span></div>
+      </div>
+      <div>
+        <h3>Sertifikat &amp; Pelatihan</h3>
+        <div class="item"><b>TOEFL Preparation Programme</b><span>Brilliant International Education, Kampung Inggris Pare, Maret 2025</span></div>
+        <div class="item"><b>Bimtek Parafrase, Manajemen Referensi, dan Unggah SIPORA</b><span>Unit Pelayanan Akademik Perpustakaan Polije, Juli 2025</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="kontak">
+  <div class="wrap">
+    <h2>Mari berdiskusi</h2>
+    <p>Terbuka untuk peluang magang dan kolaborasi di bidang front-end dan UI/UX.</p>
+    <div class="links">
+      <a href="mailto:irinee120906@gmail.com"><small>Email</small><b>irinee120906@gmail.com</b></a>
+      <a href="https://wa.me/6281299747524" target="_blank" rel="noopener"><small>WhatsApp</small><b>+62 812 9974 7524</b></a>
+      <a href="https://www.linkedin.com/in/irine-saras-hapsari" target="_blank" rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/irine-saras-hapsari</b></a>
+      <a href="https://github.com/irinee12" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/irinee12</b></a>
+      <a href="https://irinee12.github.io" target="_blank" rel="noopener"><small>Website</small><b>irinee12.github.io</b></a>
+      <a href="#top"><small>Domisili</small><b>Nganjuk, Jawa Timur</b></a>
+    </div>
+    <p class="foot">© 2026 Irine Saras Hapsari</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================
+   DATA PROYEK. Ganti nilai "img" dengan foto proyekmu.
+   Simpan foto di folder "images" (contoh: images/pakan-ikan.jpg).
+   Kalau foto belum ada, kartu menampilkan blok biru bertuliskan kategori.
+   ===================================================== */
+var projects = [
+  { kind:"Pengalaman", cat:"IoT", title:"Proyek Pakan Ikan Otomatis (IoT Berbasis Web)", org:"Tambak Ikan, Kecamatan Jabon, Sidoarjo", period:"Sep 2026 – Sekarang", tags:["IoT","Web"], img:"ikan.png",
+    points:["Merancang dan membangun alat pemberi pakan ikan otomatis berbasis IoT untuk tambak ikan.","Mengembangkan website untuk memantau dan mengatur pemberian pakan.","Mengintegrasikan perangkat keras dan perangkat lunak, lalu mengujinya sesuai kebutuhan pengguna."] },
+  { kind:"Proyek", cat:"Web", title:"Desain Sistem Website Informasi Manajemen Prolanis", org:"", period:"Nov 2026", tags:["Web","UI/UX"], img:"prolanis.png",
+    points:["Merancang website informasi untuk mendukung pengelolaan kegiatan Prolanis (penyakit kronis).","Menganalisis kebutuhan pengguna dan alur informasi untuk menyusun rancangan sistem.","Menyusun alur dan rancangan antarmuka website agar informasi program mudah diakses dan dikelola."] },
+  { kind:"Proyek", cat:"Web", title:"Sistem Informasi Pelaporan Kunjungan Pasien Rawat Jalan", org:"Klinik Mitra 05 Bojonegoro", period:"Nov 2026", tags:["Web","Sistem Informasi"], img:"images/klinik.jpg",
+    points:["Mengembangkan sistem informasi berbasis web untuk pelaporan kunjungan pasien rawat jalan.","Menambahkan fitur jadwal dokter dan statistik asuransi pasien.","Menyajikan data kunjungan pasien dalam bentuk laporan agar klinik lebih mudah memantau layanan."] },
+  { kind:"Proyek", cat:"Monitoring", title:"Sistem Monitoring Antisipasi Microsleep & Tanggap Kecelakaan", org:"", period:"Jan 2026 – Mei 2026", tags:["Monitoring","UI/UX"], img:"microsllep.png",
+    points:["Merancang sistem monitoring untuk mengantisipasi microsleep dan mendukung respons cepat saat kecelakaan.","Menyusun rancangan alur sistem dan antarmuka pemantauan agar informasi mudah dipahami pengguna."] },
+  { kind:"Pengalaman", cat:"Web & Mobile", title:"Website & Aplikasi Mobile Tracer Alumni", org:"Politeknik Negeri Jember PSDKU Sidoarjo", period:"Feb 2026 – Mei 2026", tags:["Web","Mobile","UI/UX"], img:"treacer.png",
+    points:["Menganalisis kebutuhan sistem dan alur informasi untuk proses pendataan tracer alumni.","Merancang antarmuka website dan aplikasi mobile Tracer Alumni.","Berkontribusi menyusun alur sistem agar pengelolaan data alumni lebih terstruktur."] },
+  { kind:"Pengalaman", cat:"Mobile", title:"Proyek Aplikasi Kasir", org:"Cafe Kedai Temeji, Sidoarjo", period:"Sep 2025 – Des 2025", tags:["Aplikasi","UI/UX"], img:"images/kasir.jpg",
+    points:["Mengidentifikasi kebutuhan pengguna dan alur proses transaksi kasir.","Merancang antarmuka aplikasi kasir yang sederhana, cepat, dan mudah digunakan.","Menguji dan menyempurnakan desain agar proses transaksi lebih efisien."] },
+  { kind:"Pengalaman", cat:"Desktop", title:"Proyek Sistem Parkir Berbasis Desktop", org:"Brilliant Coklat Kopi Indonesia (Bicopis), Surabaya", period:"Feb 2025 – Mei 2025", tags:["Desktop","UI/UX"], img:"parkir.png",
+    points:["Menganalisis kebutuhan sistem dan alur penggunaan parkir untuk menentukan fitur utama aplikasi.","Merancang antarmuka desktop yang terstruktur dan mudah dipahami pengguna.","Menguji antarmuka bersama pengguna dan memperbaikinya berdasarkan masukan."] }
+];
+
+(function () {
+  var grid = document.getElementById('grid');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  projects.forEach(function (p, i) {
+    var el = document.createElement('article');
+    el.className = 'project';
+    el.dataset.kind = p.kind;
+    el.style.viewTransitionName = 'p' + i;
+    var meta = (p.org ? p.org + '<br>' : '') + p.period;
+    el.innerHTML =
+      '<button class="p-head" type="button" aria-expanded="false">' +
+        '<span class="thumb">' + p.cat + '<img src="' + p.img + '" alt="" loading="lazy" onerror="this.remove()"></span>' +
+        '<span class="p-info"><span class="p-kind">' + p.kind + '</span>' +
+        '<span class="p-title">' + p.title + '</span>' +
+        '<span class="p-meta">' + meta + '</span>' +
+        '<ul class="chips">' + p.tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' +
+        '<span class="p-hint"><span>Lihat detail</span></span></span>' +
+      '</button>' +
+      '<div class="p-more"><h4>Yang saya kerjakan</h4><ul>' + p.points.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>';
+    grid.appendChild(el);
+  });
+
+  function run(fn) {
+    if (document.startViewTransition && !reduce) { document.startViewTransition(fn); } else { fn(); }
+  }
+
+  function closeAll() {
+    grid.querySelectorAll('.project').forEach(function (c) {
+      c.classList.remove('open');
+      c.querySelector('.p-head').setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.p-head');
+    if (!btn) return;
+    var card = btn.parentNode;
+    var willOpen = !card.classList.contains('open');
+    run(function () {
+      closeAll();
+      if (willOpen) {
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+    if (willOpen) setTimeout(function () { card.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' }); }, 450);
+  });
+
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f;
+      run(function () {
+        document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        closeAll();
+        grid.querySelectorAll('.project').forEach(function (c) {
+          c.hidden = !(f === 'all' || c.dataset.kind === f);
+        });
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
